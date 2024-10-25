@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "说客评语工具",
+  "version": "3.0",
+  "default_locale": "zh_CN",
+  "permissions": [
+    "tabs",
+    "storage",
+    "cookies"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_title": "Annie专属-说客评语工具",
+    "default_icon": {
+      "128": "assets/icon/128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/icon/16.png",
+    "32": "assets/icon/32.png",
+    "48": "assets/icon/48.png",
+    "64": "assets/icon/64.png",
+    "128": "assets/icon/128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/content.js"
+      ],
+      "css": [
+        "css/content.css"
+      ],
+      "matches": [
+        "https://www.talk915.com/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
